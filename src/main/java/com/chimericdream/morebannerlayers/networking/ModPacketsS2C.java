@@ -1,4 +1,4 @@
-package net.mision_thi.morebannerlayers.networking;
+package com.chimericdream.morebannerlayers.networking;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -8,11 +8,9 @@ import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.network.PacketByteBuf;
-import net.mision_thi.morebannerlayers.config.ModConfigs;
-
+import com.chimericdream.morebannerlayers.config.ModConfigs;
 
 public class ModPacketsS2C {
-
     @Environment(EnvType.CLIENT)
     public static void register() {
         ClientPlayConnectionEvents.INIT.register(((clientPlayNetworkHandler, minecraftClient) -> {
@@ -21,9 +19,6 @@ public class ModPacketsS2C {
     }
 
     private static void recieveBLL(MinecraftClient minecraftClient, ClientPlayNetworkHandler clientPlayNetworkHandler, PacketByteBuf packetByteBuf, PacketSender packetSender) {
-
         ModConfigs.BANNER_LAYERS = packetByteBuf.readInt();
     }
-
-
 }

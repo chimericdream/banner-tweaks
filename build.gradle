@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.12-SNAPSHOT'
+	id 'fabric-loom' version '1.5-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -49,6 +49,8 @@ java {
 }
 
 jar {
+	archivesBaseName += "-${project.minecraft_compatibility}"
+
 	from("LICENSE") {
 		rename { "${it}_${project.archivesBaseName}"}
 	}

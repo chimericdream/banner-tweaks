@@ -1,4 +1,4 @@
-package net.mision_thi.morebannerlayers.config;
+package com.chimericdream.morebannerlayers.config;
 
 import com.mojang.datafixers.util.Pair;
 
@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ModConfigProvider implements SimpleConfig.DefaultConfig {
-
     private String configContents = "";
 
     public List<Pair> getConfigsList() {
@@ -24,8 +23,6 @@ public class ModConfigProvider implements SimpleConfig.DefaultConfig {
         configsList.add(new Pair<>(" "," "));
         configContents = "#" + comment + "\n";
     }
-
-
 
     @Override
     public String get(String namespace) {

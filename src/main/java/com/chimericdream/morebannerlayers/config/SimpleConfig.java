@@ -1,5 +1,4 @@
-package net.mision_thi.morebannerlayers.config;
-
+package com.chimericdream.morebannerlayers.config;
 
 /*
  * Copyright (c) 2021 magistermaks
@@ -37,7 +36,6 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class SimpleConfig {
-
     private static final Logger LOGGER = LogManager.getLogger("SimpleConfig");
     private final HashMap<String, String> config = new HashMap<>();
     private final ConfigRequest request;
@@ -52,7 +50,6 @@ public class SimpleConfig {
     }
 
     public static class ConfigRequest {
-
         private final File file;
         private final String filename;
         private DefaultConfig provider;
@@ -89,7 +86,6 @@ public class SimpleConfig {
         private String getConfig() {
             return provider.get( filename ) + "\n";
         }
-
     }
 
     /**
@@ -105,7 +101,6 @@ public class SimpleConfig {
     }
 
     private void createConfig() throws IOException {
-
         // try creating missing files
         request.file.getParentFile().mkdirs();
         Files.createFile( request.file.toPath() );
@@ -114,7 +109,6 @@ public class SimpleConfig {
         PrintWriter writer = new PrintWriter(request.file, "UTF-8");
         writer.write( request.getConfig() );
         writer.close();
-
     }
 
     private void loadConfig() throws IOException {
@@ -163,7 +157,6 @@ public class SimpleConfig {
                 broken = true;
             }
         }
-
     }
 
     /**
@@ -252,5 +245,4 @@ public class SimpleConfig {
         LOGGER.warn( "Config '" + request.filename + "' was removed from existence! Restart the game to regenerate it." );
         return request.file.delete();
     }
-
 }

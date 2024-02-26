@@ -1,15 +1,11 @@
-package net.mision_thi.morebannerlayers;
+package com.chimericdream.morebannerlayers;
 
+import com.chimericdream.morebannerlayers.networking.ModPacketsS2C;
 import net.fabricmc.api.ClientModInitializer;
-import net.mision_thi.morebannerlayers.networking.ModPacketsS2C;
 
 public class MoreBannerLayersClient implements ClientModInitializer {
-
     @Override
     public void onInitializeClient() {
-
         ModPacketsS2C.register();
-
-
     }
 }

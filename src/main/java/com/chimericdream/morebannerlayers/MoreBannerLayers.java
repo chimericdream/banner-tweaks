@@ -1,11 +1,9 @@
-package net.mision_thi.morebannerlayers;
+package com.chimericdream.morebannerlayers;
 
-import net.mision_thi.morebannerlayers.config.ModConfigs;
+import com.chimericdream.morebannerlayers.config.ModConfigs;
 
 public class MoreBannerLayers {
-
     public static int getLimit() {
         return ModConfigs.BANNER_LAYERS;
     }
-
 }

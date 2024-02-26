@@ -1,32 +1,32 @@
 {
   "schemaVersion": 1,
-  "id": "morebannerlayers",
+  "id": "morebannerlayers-reborn",
   "version": "1.0.0-1.19",
 
-  "name": "More Banner Layers",
+  "name": "More Banner Layers Reborn",
   "description": "A mod that allows you to have more banner layers",
   "authors": [
-    "mision_thi"
+    "chimericdream"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
     "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
 
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/morebannerlayers/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.mision_thi.morebannerlayers.MoreBannerLayersMod"
+        "com.chimericdream.morebannerlayers.MoreBannerLayersMod"
     ],
     "client": [
-      "net.mision_thi.morebannerlayers.MoreBannerLayersClient"
+        "com.chimericdream.morebannerlayers.MoreBannerLayersClient"
     ]
   },
   "mixins": [
-    "morebannerlayers.mixins.json"
+    "morebannerlayers-reborn.mixins.json"
   ],
 
   "depends": {
@@ -36,6 +36,5 @@
     "java": ">=17"
   },
   "suggests": {
-    "another-mod": "*"
   }
 }
