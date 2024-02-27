@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "morebannerlayers-reborn",
-  "version": "1.0.0-1.19",
+  "version": "1.0.0",
 
   "name": "More Banner Layers Reborn",
   "description": "A mod that allows you to have more banner layers",
@@ -30,11 +30,12 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.13.3",
-    "fabric": "*",
-    "minecraft": "1.19.x",
-    "java": ">=17"
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.20",
+    "java": ">=17",
+    "cloth-config": ">=13.0.0"
   },
-  "suggests": {
+  "recommends": {
+    "modmenu": ">=9.0.0"
   }
 }
