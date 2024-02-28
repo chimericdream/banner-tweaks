@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "morebannerlayers-reborn",
-  "version": "1.0.0",
+  "version": "1.0.1",
 
   "name": "More Banner Layers Reborn",
   "description": "A mod that allows you to have more banner layers",
@@ -9,8 +9,8 @@
     "chimericdream"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/more-banner-layers-reborn",
+    "sources": "https://github.com/chimericdream/more-banner-layers-reborn"
   },
 
   "license": "MIT",
