@@ -1,4 +1,4 @@
-package com.chimericdream.morebannerlayers.config;
+package com.chimericdream.bannertweaks.config;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
@@ -11,6 +11,6 @@ import net.fabricmc.api.Environment;
 public class ModMenuIntegration implements ModMenuApi {
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
-        return screen -> AutoConfig.getConfigScreen(MoreBannerLayersConfig.class, screen).get();
+        return screen -> AutoConfig.getConfigScreen(BannerTweaksConfig.class, screen).get();
     }
 }

@@ -1,11 +1,11 @@
-package com.chimericdream.morebannerlayers;
+package com.chimericdream.bannertweaks;
 
-import com.chimericdream.morebannerlayers.config.ConfigManager;
+import com.chimericdream.bannertweaks.config.ConfigManager;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class MoreBannerLayersMod implements ModInitializer {
+public class BannerTweaksMod implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(ModInfo.MOD_ID);
 
 	static {

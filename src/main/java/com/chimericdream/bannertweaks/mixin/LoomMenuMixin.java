@@ -1,6 +1,6 @@
-package com.chimericdream.morebannerlayers.mixin;
+package com.chimericdream.bannertweaks.mixin;
 
-import com.chimericdream.morebannerlayers.config.ConfigManager;
+import com.chimericdream.bannertweaks.config.ConfigManager;
 import net.minecraft.client.gui.screen.ingame.LoomScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Constant;

@@ -1,6 +1,6 @@
-package com.chimericdream.morebannerlayers.networking;
+package com.chimericdream.bannertweaks.networking;
 
-import com.chimericdream.morebannerlayers.config.ConfigManager;
+import com.chimericdream.bannertweaks.config.ConfigManager;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;

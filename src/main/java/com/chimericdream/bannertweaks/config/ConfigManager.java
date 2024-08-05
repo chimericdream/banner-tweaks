@@ -1,6 +1,6 @@
-package com.chimericdream.morebannerlayers.config;
+package com.chimericdream.bannertweaks.config;
 
-import com.chimericdream.morebannerlayers.config.MoreBannerLayersConfig.Defaults;
+import com.chimericdream.bannertweaks.config.BannerTweaksConfig.Defaults;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.ConfigHolder;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
@@ -9,9 +9,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 public class ConfigManager {
-    private static ConfigHolder<MoreBannerLayersConfig> holder;
+    private static ConfigHolder<BannerTweaksConfig> holder;
 
-    public static final Consumer<MoreBannerLayersConfig> DEFAULT = (config) -> {
+    public static final Consumer<BannerTweaksConfig> DEFAULT = (config) -> {
         config.reset = "Erase to reset";
         config.maxBannerLayers = Defaults.MAX_BANNER_LAYERS;
     };
@@ -21,7 +21,7 @@ public class ConfigManager {
             throw new IllegalStateException("Configuration already registered");
         }
 
-        holder = AutoConfig.register(MoreBannerLayersConfig.class, JanksonConfigSerializer::new);
+        holder = AutoConfig.register(BannerTweaksConfig.class, JanksonConfigSerializer::new);
 
         if (holder.getConfig().reset == null || Objects.equals(holder.getConfig().reset, "")) {
             DEFAULT.accept(holder.getConfig());
@@ -30,9 +30,9 @@ public class ConfigManager {
         holder.save();
     }
 
-    public static MoreBannerLayersConfig getConfig() {
+    public static BannerTweaksConfig getConfig() {
         if (holder == null) {
-            return new MoreBannerLayersConfig();
+            return new BannerTweaksConfig();
         }
 
         return holder.getConfig();

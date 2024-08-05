@@ -1,6 +1,6 @@
-package com.chimericdream.morebannerlayers.networking;
+package com.chimericdream.bannertweaks.networking;
 
-import com.chimericdream.morebannerlayers.ModInfo;
+import com.chimericdream.bannertweaks.ModInfo;
 import net.minecraft.util.Identifier;
 
 public class ModPackets {

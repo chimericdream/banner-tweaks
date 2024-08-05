@@ -1,20 +1,20 @@
-package com.chimericdream.morebannerlayers.config;
+package com.chimericdream.bannertweaks.config;
 
-import com.chimericdream.morebannerlayers.ModInfo;
-import com.chimericdream.morebannerlayers.MoreBannerLayersMod;
+import com.chimericdream.bannertweaks.ModInfo;
+import com.chimericdream.bannertweaks.BannerTweaksMod;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 
 @Config(name = ModInfo.MOD_ID)
 @Config.Gui.Background("minecraft:textures/block/composter_side.png")
-public class MoreBannerLayersConfig implements ConfigData {
+public class BannerTweaksConfig implements ConfigData {
     public String reset = "";
 
     public int maxBannerLayers = Defaults.MAX_BANNER_LAYERS;
 
     public void validatePostLoad() {
         if (this.maxBannerLayers < 0 || this.maxBannerLayers > 16) {
-            MoreBannerLayersMod.LOGGER.info("[config] Invalid value found for 'maxBannerLayers'! Resetting to default.");
+            BannerTweaksMod.LOGGER.info("[config] Invalid value found for 'maxBannerLayers'! Resetting to default.");
             this.maxBannerLayers = Defaults.MAX_BANNER_LAYERS;
         }
     }

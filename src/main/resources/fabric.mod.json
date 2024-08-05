@@ -1,32 +1,32 @@
 {
   "schemaVersion": 1,
-  "id": "morebannerlayers-reborn",
+  "id": "banner-tweaks",
   "version": "1.0.1",
 
-  "name": "More Banner Layers Reborn",
-  "description": "A mod that allows you to have more banner layers",
+  "name": "Banner Tweaks",
+  "description": "A mod that provides some vanilla-friendly tweaks to banners.",
   "authors": [
     "chimericdream"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/more-banner-layers-reborn",
-    "sources": "https://github.com/chimericdream/more-banner-layers-reborn"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/banner-tweaks",
+    "sources": "https://github.com/chimericdream/banner-tweaks"
   },
 
   "license": "MIT",
-  "icon": "assets/morebannerlayers/icon.png",
+  "icon": "assets/bannertweaks/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-        "com.chimericdream.morebannerlayers.MoreBannerLayersMod"
+      "com.chimericdream.bannertweaks.BannerTweaksMod"
     ],
     "client": [
-        "com.chimericdream.morebannerlayers.MoreBannerLayersClient"
+      "com.chimericdream.bannertweaks.BannerTweaksClient"
     ]
   },
   "mixins": [
-    "morebannerlayers-reborn.mixins.json"
+    "banner-tweaks.mixins.json"
   ],
 
   "depends": {

@@ -1,7 +1,7 @@
-package com.chimericdream.morebannerlayers.mixin;
+package com.chimericdream.bannertweaks.mixin;
 
-import com.chimericdream.morebannerlayers.config.ConfigManager;
-import com.chimericdream.morebannerlayers.networking.ModPackets;
+import com.chimericdream.bannertweaks.config.ConfigManager;
+import com.chimericdream.bannertweaks.networking.ModPackets;
 import io.netty.buffer.Unpooled;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.server.network.ConnectedClientData;
