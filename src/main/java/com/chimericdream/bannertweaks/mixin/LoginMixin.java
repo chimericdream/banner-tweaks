@@ -1,13 +1,11 @@
 package com.chimericdream.bannertweaks.mixin;
 
 import com.chimericdream.bannertweaks.config.ConfigManager;
-import com.chimericdream.bannertweaks.networking.ModPackets;
-import io.netty.buffer.Unpooled;
+import com.chimericdream.bannertweaks.networking.ModPacketsS2C;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.server.network.ConnectedClientData;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.network.ClientConnection;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.PlayerManager;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -18,8 +16,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class LoginMixin {
     @Inject(at = @At("TAIL"), method = "onPlayerConnect(Lnet/minecraft/network/ClientConnection;Lnet/minecraft/server/network/ServerPlayerEntity;Lnet/minecraft/server/network/ConnectedClientData;)V")
     private void syncBannerLayerLimit(ClientConnection connection, ServerPlayerEntity player, ConnectedClientData clientData, CallbackInfo info) {
-        PacketByteBuf passedData = new PacketByteBuf(Unpooled.buffer());
-        passedData.writeInt(ConfigManager.getConfig().maxBannerLayers);
-        ServerPlayNetworking.send(player, ModPackets.BANNER_LAYER_LIMIT, passedData);
+        ServerPlayNetworking.send(player, new ModPacketsS2C.BannerLayerLimitPayload(ConfigManager.getConfig().maxBannerLayers));
     }
 }
