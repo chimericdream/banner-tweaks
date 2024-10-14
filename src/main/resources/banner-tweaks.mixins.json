@@ -6,7 +6,8 @@
   "mixins": [
       "BannerTweaksMixin",
       "LoomScreenHandlerMixin",
-      "LoginMixin"
+      "LoginMixin",
+      "MapStateMixin"
   ],
   "client": [
       "LoomMenuMixin"
