@@ -4,6 +4,7 @@
   "package": "com.chimericdream.bannertweaks.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+      "BannerBlockEntityRendererMixin",
       "BannerTweaksMixin",
       "LoomScreenHandlerMixin",
       "LoginMixin",
