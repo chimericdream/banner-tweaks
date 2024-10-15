@@ -13,7 +13,7 @@ public class BannerTweaksConfig implements ConfigData {
     public int maxBannerLayers = Defaults.MAX_BANNER_LAYERS;
 
     public void validatePostLoad() {
-        if (this.maxBannerLayers < 0 || this.maxBannerLayers > 16) {
+        if (this.maxBannerLayers < 0 || this.maxBannerLayers > 32) {
             BannerTweaksMod.LOGGER.info("[config] Invalid value found for 'maxBannerLayers'! Resetting to default.");
             this.maxBannerLayers = Defaults.MAX_BANNER_LAYERS;
         }
