@@ -1,5 +1,7 @@
 package com.chimericdream.bannertweaks.mixin;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.block.WallBannerBlock;
 import net.minecraft.block.entity.BannerBlockEntity;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
@@ -50,9 +52,15 @@ abstract public class BannerBlockEntityRendererMixin {
             return;
         }
 
+        float verticalOffset = 0f;
+        BlockState state = entity.getCachedState();
+        if (state.getBlock() instanceof WallBannerBlock) {
+            verticalOffset = -1f;
+        }
+
         matrices.push();
 
-        matrices.translate(0.5f, 2.125f, 0.5f);
+        matrices.translate(0.5f, 2.125f + verticalOffset, 0.5f);
         matrices.multiply(this.dispatcher.camera.getRotation());
         matrices.scale(0.025f, -0.025f, 0.025f);
 
