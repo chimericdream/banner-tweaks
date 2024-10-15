@@ -22,28 +22,32 @@ import java.util.Optional;
 
 @Mixin(MapState.class)
 abstract public class MapStateMixin {
-    @Shadow public RegistryKey<World> dimension;
+    @Shadow @Final public RegistryKey<World> dimension;
 
-    @Shadow abstract public void markDecorationsDirty();
-    @Shadow abstract public void removeDecoration(String id);
+    @Shadow abstract protected void markDecorationsDirty();
+    @Shadow abstract protected void removeDecoration(String id);
     @Shadow abstract public boolean decorationCountNotLessThan(int iconCount);
 
-    @Shadow private int centerX;
-    @Shadow private int centerZ;
-    @Shadow private byte scale;
-    @Shadow private boolean unlimitedTracking;
+    @Shadow @Final public int centerX;
+    @Shadow @Final public int centerZ;
+    @Shadow @Final public byte scale;
+    @Shadow @Final private boolean unlimitedTracking;
     @Shadow private int decorationCount;
 
     @Shadow @Final Map<String, MapDecoration> decorations;
     @Shadow private @Final Map<String, MapBannerMarker> banners;
 
-    @Overwrite()
+    /**
+     * @author chimericdream (with additional credit to @jason-green-io)
+     * @reason fixes MC-144406
+     */
+    @Overwrite
     private void addDecoration(RegistryEntry<MapDecorationType> type, @Nullable WorldAccess world, String key, double x, double z, double rotation, @Nullable Text text) {
         int i = 1 << this.scale;
         float f = (float) (x - (double) this.centerX) / (float) i;
         float g = (float) (z - (double) this.centerZ) / (float) i;
-        byte b = (byte) ((int) ((double) (f * 2.0F) + 0.5));
-        byte c = (byte) ((int) ((double) (g * 2.0F) + 0.5));
+        byte b = (byte) ((int) ((double) f * 2.0F));
+        byte c = (byte) ((int) ((double) g * 2.0F));
         byte d;
 
         if (f >= -64.0F && g >= -64.0F && f <= 64.0F && g <= 64.0F) {
@@ -71,11 +75,11 @@ abstract public class MapStateMixin {
             }
 
             d = 0;
-            if (f <= -64.0F) {
+            if (f < -64.0F) {
                 b = -128;
             }
 
-            if (g <= -64.0F) {
+            if (g < -64.0F) {
                 c = -128;
             }
 
@@ -104,7 +108,11 @@ abstract public class MapStateMixin {
 
     }
 
-    @Overwrite()
+    /**
+     * @author chimericdream (with additional credit to @jason-green-io)
+     * @reason fixes MC-144406
+     */
+    @Overwrite
     public boolean addBanner(WorldAccess world, BlockPos pos) {
         double d = (double) pos.getX() + 0.5;
         double e = (double) pos.getZ() + 0.5;
@@ -112,7 +120,7 @@ abstract public class MapStateMixin {
         double f = (d - (double) this.centerX) / (double) i;
         double g = (e - (double) this.centerZ) / (double) i;
 
-        if (f >= -64.0 && g >= -64.0 && f <= 64.0 && g <= 64.0) {
+        if (f >= -64.0 && g >= -64.0 && f < 64.0 && g < 64.0) {
             MapBannerMarker mapBannerMarker = MapBannerMarker.fromWorldBlock(world, pos);
             if (mapBannerMarker == null) {
                 return false;
